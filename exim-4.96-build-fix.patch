@@ -1,0 +1,13 @@
+diff --git a/src/drtables.c b/src/drtables.c
+index 513ef6c..3fa5c92 100644
+--- a/src/drtables.c
++++ b/src/drtables.c
+@@ -736,7 +736,7 @@ else
+     {
+     char * name = ent->d_name;
+     int len = (int)strlen(name);
+-    if (regex_match(regex_islookupmod, US name, len, NUL))
++    if (regex_match(regex_islookupmod, US name, len, NULL))
+       {
+       int pathnamelen = len + (int)strlen(LOOKUP_MODULE_DIR) + 2;
+       void *dl;
