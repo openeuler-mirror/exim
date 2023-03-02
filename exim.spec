@@ -4,7 +4,7 @@
 Summary:          The exim mail transfer agent
 Name:             exim
 Version:          4.96
-Release:          1
+Release:          2
 License:          GPLv2+
 Url:              https://www.exim.org/
 
@@ -51,6 +51,7 @@ Recommends:       publicsuffix-list
 BuildRequires:    gcc
 BuildRequires:    libdb-devel
 BuildRequires:    openssl-devel
+BuildRequires:    zlib-devel
 BuildRequires:    openldap-devel
 BuildRequires:    pam-devel
 BuildRequires:    pcre2-devel
@@ -59,7 +60,6 @@ BuildRequires:    cyrus-sasl-devel
 BuildRequires:    libspf2-devel
 BuildRequires:    libopendmarc-devel
 BuildRequires:    openldap-devel
-BuildRequires:    openssl-devel
 BuildRequires:    mariadb-connector-c-devel
 BuildRequires:    libpq-devel
 BuildRequires:    libXaw-devel
@@ -482,5 +482,8 @@ fi
 %{_sysconfdir}/cron.daily/greylist-tidy.sh
 
 %changelog
+* Thur Feb 16 2023 zhuchao <tom_toworld@163.com> - 4.96-2
+- DESC:add build requirement init
+
 * Tue Oct 18 2022 zhuchao <tom_toworld@163.com> - 4.96-1
 - DESC:Package init
