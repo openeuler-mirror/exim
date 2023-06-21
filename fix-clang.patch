@@ -1,0 +1,12 @@
+diff -ur exim-4.96/OS/Makefile-Linux exim-4.96-copy/OS/Makefile-Linux
+--- exim-4.96/OS/Makefile-Linux	2022-06-23 21:41:10.000000000 +0800
++++ exim-4.96-copy/OS/Makefile-Linux	2023-06-20 21:08:50.241044004 +0800
+@@ -14,7 +14,7 @@
+ CHMOD_COMMAND=look_for_it
+ 
+ # The system cc may be gcc or clang; do not force gcc
+-CC=cc
++CC=clang
+ # Preserve CFLAGS and CFLAGS_DYNAMIC from the caller/environment
+ CFLAGS ?= -O -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+ CFLAGS_DYNAMIC ?= -shared -rdynamic

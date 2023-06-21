@@ -4,7 +4,7 @@
 Summary:          The exim mail transfer agent
 Name:             exim
 Version:          4.96
-Release:          2
+Release:          3
 License:          GPLv2+
 Url:              https://www.exim.org/
 
@@ -43,7 +43,9 @@ Patch3:           exim-4.96-pic.patch
 Patch4:           exim-4.96-opendmarc-1.4-build-fix.patch
 # https://bugs.exim.org/show_bug.cgi?id=2899
 Patch5:           exim-4.96-build-fix.patch
-
+%if "%toolchain"=="clang"
+patch6:           fix-clang.patch
+%endif
 Requires:         /etc/pki/tls/certs /etc/pki/tls/private
 Requires:         setup
 Requires:         perl
@@ -482,6 +484,9 @@ fi
 %{_sysconfdir}/cron.daily/greylist-tidy.sh
 
 %changelog
+* Mon Jun 19 2023 zhangxiang <zhangxiang@iscas.ac.cn> - 4.96-3
+- Fix clang build error
+
 * Thur Feb 16 2023 zhuchao <tom_toworld@163.com> - 4.96-2
 - DESC:add build requirement init
 
